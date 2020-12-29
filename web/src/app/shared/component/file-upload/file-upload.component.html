@@ -1,0 +1,6 @@
+<div class="file-upload">
+    <button type="button" mat-flat-button class="btn-md" (click)="fileInput.click()" disableRipple>
+        <span class="btn-txt">{{ text }}</span>
+    </button>
+    <input #fileInput type="file" class="input" (change)="onFileSelect()" />
+</div>

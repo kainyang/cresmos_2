@@ -1,0 +1,33 @@
+@import '../../../assets/custom-variables.scss';
+
+.user-detail-container {
+    display: flex;
+    padding: $padding-xxxl;
+
+    .user-avatar {
+        height       : 100px;
+        width        : 100px;
+        background   : $colour-white;
+        border       : 1px;
+        border-radius: 0.5rem;
+    }
+
+    .user-detail {
+        display        : flex;
+        justify-content: space-evenly;
+        align-items    : center;
+        padding        : 0 $padding-xxxl 0 $padding-xxxl;
+
+        .username {
+            font-size   : $font-size-xl;
+            font-weight : bold;
+            color       : $colour-white;
+            margin-right: $margin-md;
+        }
+
+        .flag-icon {
+            border       : 1px;
+            border-radius: 0.15rem;
+        }
+    }
+}

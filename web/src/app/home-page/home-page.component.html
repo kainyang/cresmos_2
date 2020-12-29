@@ -1,0 +1,26 @@
+<div class="grid">
+    <div class="carousel-container block-full">
+
+        <h2>HAPPENING AROUND YOU</h2>
+        <mdb-carousel class="carousel slide carousel-fade" [animation]="'fade'">
+            <mdb-slide *ngFor="let eventsImage of homeContent.eventsImages">
+                <img class="d-block w-100" [src]="eventsImage">
+            </mdb-slide>
+        </mdb-carousel>
+
+        <h2>NEWS</h2>
+        <mdb-carousel class="carousel slide carousel-fade" [animation]="'fade'">
+            <mdb-slide *ngFor="let newsImage of homeContent.newsImages">
+                <img class="d-block w-100" [src]="newsImage">
+            </mdb-slide>
+        </mdb-carousel>
+
+        <h2>VALUE LAND</h2>
+        <mdb-carousel class="carousel slide carousel-fade" [animation]="'fade'">
+            <mdb-slide *ngFor="let valueLandImage of homeContent.valueLandImages">
+                <img class="d-block w-100" [src]="valueLandImage">
+            </mdb-slide>
+        </mdb-carousel>
+
+    </div>
+</div>

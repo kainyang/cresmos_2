@@ -1,0 +1,27 @@
+<div class="full-card">
+    <div class="form-container">
+        <div class="form-details">
+            <form [formGroup]="securityForm" class="form-fields">
+
+                <div class="field-row">
+                    <div class="field">
+                        <label>Password Reset</label>
+                        <input type="password" class="form-input" formControlName="passwordReset">
+                    </div>
+                </div>
+
+                <div class="field-row">
+                    <div class="field">
+                        <label>Password Reset Repeat</label>
+                        <input type="password" class="form-input" formControlName="passwordResetRepeat">
+                    </div>
+                </div>
+
+            </form>
+        </div>
+        <app-validation-message [validationMessages]="validationMessages"></app-validation-message>
+        <button mat-flat-button type="submit" class="btn-md" (click)="resetPassword()" disableRipple>
+            <span class="btn-txt">Update</span>
+        </button>
+    </div>
+</div>

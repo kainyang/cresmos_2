@@ -1,0 +1,93 @@
+@import '../../../assets/custom-variables.scss';
+
+.message {
+    display   : flex;
+    padding   : $padding-lg;
+    text-align: center;
+    color     : $colour-white;
+    font-size : $font-size-lg;
+}
+
+.form-container {
+    background    : $colour-midnight;
+    width         : 100%;
+    display       : flex;
+    flex-direction: column;
+    padding       : $padding-xxl;
+    color         : $colour-white;
+
+    .header {
+        margin-bottom: $margin-xl;
+    }
+
+    form {
+        width     : 100%;
+        align-self: center;
+    }
+
+    .field-row {
+        display        : flex;
+        flex-direction : column;
+        justify-content: flex-start;
+
+        .field {
+            display    : flex;
+            align-items: baseline;
+
+            span {
+                width        : $label-width-md;
+                font-size    : $font-size-md;
+                padding-right: $padding-md;
+            }
+
+            input {
+                width        : 100%;
+                border       : 0;
+                border-radius: 0.25rem;
+                padding      : $padding-md;
+                margin-bottom: $margin-md;
+            }
+        }
+    }
+
+    .button-container {
+        display        : flex;
+        flex-direction : row;
+        justify-content: space-between;
+        margin-top     : $margin-xl;
+    }
+}
+
+.payment-container {
+
+    h2 {
+        margin-bottom: $margin-xl;
+        padding      : $padding-xxl;
+    }
+
+    .button-container {
+        display       : flex;
+        flex-direction: row;
+        margin-top    : $margin-xl;
+        padding       : $padding-xxl;
+
+        >button {
+            margin-left: $margin-xxl;
+        }
+    }
+}
+
+button {
+    width    : 145px;
+    color    : $colour-white;
+    font-size: $font-size-md;
+}
+
+mat-expansion-panel {
+    background: $colour-navy;
+    margin-top: $margin-md;
+}
+
+mat-divider {
+    margin: $margin-md 0 $margin-md 0;
+}

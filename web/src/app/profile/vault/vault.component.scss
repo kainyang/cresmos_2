@@ -1,0 +1,10 @@
+@import '../../../assets/custom-variables.scss';
+
+.full-card {
+    display    : flex;
+    text-align : center;
+    font-weight: bold;
+    font-size  : $font-size-xxxl;
+    color      : $colour-white;
+    padding    : $padding-xxxl;
+}

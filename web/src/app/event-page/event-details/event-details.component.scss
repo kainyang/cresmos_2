@@ -1,0 +1,53 @@
+@import '../../../assets/custom-variables.scss';
+
+mat-tab-group {
+    height    : $content-height-lg;
+    width     : $desktop-content-width;
+    padding   : $padding-lg;
+    background: $colour-midnight;
+    color     : $colour-white;
+}
+
+.content {
+    padding-top: $padding-lg;
+}
+
+.link-go-back {
+    color: $colour-white !important;
+}
+
+.button-container {
+    display       : flex;
+    flex-direction: column;
+    padding       : $padding-xxl;
+
+    align-self: flex-end;
+
+    button {
+        width      : 145px;
+        margin-left: $margin-lg;
+        font-size  : $font-size-md;
+    }
+
+    app-validation-message {
+        margin-right: $margin-lg;
+    }
+}
+
+.team-card {
+    width     : $card-width-md;
+    color     : $colour-black;
+    background: $colour-white;
+}
+
+@media screen and (max-width: $tablet-max-width) {
+    mat-tab-group {
+        width: $tablet-content-width;
+    }
+}
+
+@media screen and (max-width: $mobile-max-width) {
+    mat-tab-group {
+        width: $mobile-max-width;
+    }
+}

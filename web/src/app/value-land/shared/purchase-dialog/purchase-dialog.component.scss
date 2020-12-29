@@ -1,0 +1,82 @@
+@import '../../../../assets/custom-variables.scss';
+
+.dialog-container {
+    background   : $colour-navy;
+    color        : $colour-white;
+    padding      : $padding-xxl;
+    border-radius: 5px;
+}
+
+.mat-dialog-content {
+    max-width: 460px;
+
+    .warning-icon {
+        margin-right: $margin-md;
+        margin-top  : $margin-xs;
+        height      : 16px;
+        width       : 16px;
+    }
+}
+
+.button-column {
+    display        : flex;
+    box-sizing     : border-box;
+    justify-content: flex-end;
+    align-items    : flex-start;
+    background     : $colour-navy;
+
+    button {
+        height: $button-height-md;
+        width : 100px;
+    }
+
+    .cancel-button {
+        margin-right: $margin-lg;
+    }
+
+    .mat-stroked-button,
+    .mat-flat-button {
+        line-height: unset;
+    }
+}
+
+.heading,
+.subheading {
+    font-size  : $font-size-xs;
+    line-height: $line-height-xs;
+}
+
+.heading {
+    margin: $margin-xxl $margin-xl;
+}
+
+.subheading {
+    margin: 0px 20px 28px 20px;
+}
+
+.title-container {
+    display        : flex;
+    justify-content: space-between;
+    align-items    : center;
+
+    .title {
+        vertical-align: text-top;
+    }
+
+    .title-text {
+        display    : flex;
+        align-items: baseline;
+    }
+}
+
+.close-button {
+    height     : 24px;
+    width      : 24px;
+    line-height: 16px;
+    background : $colour-navy;
+
+    .close-icon {
+        color : $colour-white;
+        width : 12px;
+    }
+}

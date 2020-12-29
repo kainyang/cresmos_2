@@ -1,0 +1,12 @@
+﻿<div class="tertiary-nav">
+    <nav mat-tab-nav-bar>
+        <ng-container *ngFor="let tertiaryNavLink of tertiaryNavLinks">
+            <a mat-tab-link 
+               [routerLink]="tertiaryNavLink.link" 
+               routerLinkActive #rla="routerLinkActive"
+               [active]="rla.isActive">
+                <span>{{tertiaryNavLink.label}}</span>
+            </a>
+        </ng-container>
+    </nav>
+</div>

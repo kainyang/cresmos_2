@@ -1,0 +1,14 @@
+@import '../../../assets/custom-variables.scss';
+
+table {
+    width: 100%;
+    color: $colour-white;
+}
+
+td.mat-cell {
+    padding: 12px;
+}
+
+th.mat-header-cell {
+    padding: 12px;
+}

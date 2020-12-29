@@ -1,0 +1,13 @@
+﻿<div class="nav-list-container">
+    <mat-card>
+        <mat-card-content>
+            <mat-nav-list>
+                <ng-container *ngFor="let navLink of navLinks">
+                    <a   mat-list-item [routerLink]="navLink.link" routerLinkActive="active">
+                        <span>{{navLink.label}}</span>
+                    </a>
+                </ng-container>
+            </mat-nav-list>
+        </mat-card-content>
+    </mat-card>
+</div>

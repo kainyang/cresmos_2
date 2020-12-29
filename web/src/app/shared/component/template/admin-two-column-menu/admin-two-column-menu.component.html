@@ -1,0 +1,11 @@
+﻿<div class="menu-container">
+    <app-tab-nav [navAreaOverride]="true"></app-tab-nav>
+    <div class="grid">
+        <div class="block-quarter">
+            <app-nav-list [navLinks]="navLinks"></app-nav-list>
+        </div>
+        <div class="block-three-quarter">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>

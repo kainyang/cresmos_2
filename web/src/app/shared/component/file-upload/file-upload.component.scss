@@ -1,0 +1,9 @@
+@import '../../../../assets/custom-variables.scss';
+
+.file-upload {
+    margin-bottom: $margin-xxl;
+
+    .input {
+        display: none;
+    }
+}

@@ -1,0 +1,16 @@
+@import '../../../../assets/custom-variables.scss';
+
+
+.tab-nav {
+  display        : flex;
+  justify-content: center;
+  padding        : $padding-md;
+  border-radius  : 5px;
+  background     : $colour-midnight;
+}
+
+.mat-tab-link {
+  font-weight: bold;
+  font-size  : $font-size-lg;
+  color      : $colour-white;
+}

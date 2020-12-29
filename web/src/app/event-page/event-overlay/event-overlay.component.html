@@ -1,0 +1,18 @@
+<div class="event-overlay-container">
+    <!-- <div class="left-content">
+
+    </div> -->
+    <div class="right-content">
+        <h2>{{ eventInformation.eventName }}</h2>
+        <div class="details-container" [innerHTML]="eventInformation.description"></div>
+        <div class="button-container">
+            <app-validation-message [validationMessages]="validationMessages"></app-validation-message>
+            <button *ngIf="!showPayButton()" mat-flat-button class="btn-md" (click)="register()"
+                disableRipple [disabled]="isRegistered">
+                <span class="btn-txt">Register</span>
+            </button>
+            <app-checkout *ngIf="showPayButton()" (paymentSucess)="register()" [amount]="eventInformation.amount"
+                [description]="eventInformation.eventName" [disableButton]="isRegistered"></app-checkout>
+        </div>
+    </div>
+</div>

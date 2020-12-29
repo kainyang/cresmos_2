@@ -1,0 +1,13 @@
+﻿<div class="overlay-container"
+     role="dialog"
+     (keydown.esc)="closeOverlay()"
+     [@flyInOut]="animate"
+     (@flyInOut.done)="onAnimationDone()"
+     focus-trap>
+    <button (click)="closeOverlay()" id="close-button" #closeButton aria-label="close" mat-icon-button color="primary" class="close-button icon-btn" disableRipple>
+        <mat-icon class="close-icon" svgIcon="close"></mat-icon>
+    </button>
+    <div class="overlay-content" [ngClass]="{'no-padding': noOverlayPadding}">
+        <div [cdkPortalOutlet]></div>
+    </div>
+</div>

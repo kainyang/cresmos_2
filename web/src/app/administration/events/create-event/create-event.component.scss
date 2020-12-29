@@ -1,0 +1,78 @@
+@import '../../../../assets/custom-variables.scss';
+@import "~ng-pick-datetime/assets/style/picker.min.css";
+
+.form-container {
+    background    : $colour-midnight;
+    border-radius : 0.25rem;
+    box-shadow    : 0 1.5px 0 0 rgba(0, 0, 0, 0.1);
+    display       : flex;
+    flex-direction: column;
+
+    label {
+        width: 150px;
+    }
+
+    a {
+        color    : $colour-white;
+        font-size: $font-size-lg;
+        padding  : $padding-lg;
+    }
+
+    .header {
+        font-family: "museo-slab";
+        font-size  : $font-size-xxl;
+        text-align : center;
+        padding    : $padding-lg;
+        color      : $colour-white;
+    }
+
+    .form-details {
+        color  : $colour-white;
+        padding: $padding-lg;
+        margin : $margin-xl;
+
+        .form-fields {
+            .radio-button {
+                text-align: center;
+            }
+
+            .field {
+                display      : flex;
+                margin-bottom: $margin-xl;
+
+                input {
+                    border-radius: 0.25rem;
+                    padding      : $padding-sm;
+                    width        : 250px;
+                }
+
+                textarea {
+                    border-radius: 0.25rem;
+                    width        : 250px;
+                    height       : 100px;
+                    resize       : none;
+                }
+
+                .file-name {
+                    padding-left: $padding-lg;
+                }
+
+                .input-group {
+                    width: 300px;
+                }
+            }
+        }
+
+        .submit-button {
+            float: right;
+        }
+
+        app-validation-error {
+            width: $card-width-medium;
+        }
+    }
+}
+
+app-validation-message {
+    width: $card-width-medium;
+}

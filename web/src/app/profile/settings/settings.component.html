@@ -1,0 +1,26 @@
+<app-tab-nav></app-tab-nav>
+<div class="main-content-grid">
+
+    <div class="block-quarter-start">
+        <div class="full-card">
+            <div class="user-detail-container">
+                <div class="user-avatar">
+
+                </div>
+                <div class="user-detail">
+                    <span class="username">Username</span>
+                    <span class="flag-icon flag-icon-sg flag-icon-squared"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="full-card">
+            <app-nav-list [navLinks]="navLinks"></app-nav-list>
+        </div>
+    </div>
+
+    <div class="block-three-quarter-end">
+        <router-outlet></router-outlet>
+    </div>
+
+</div>

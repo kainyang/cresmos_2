@@ -1,0 +1,93 @@
+<header *ngIf="!isMobileDevice">
+    <div class="brand-logo">
+        <img src="assets/images/cresmoslogo.svg">
+    </div>
+    <app-nav-menu></app-nav-menu>
+    <div class="right-content">
+        <div class="button-container" *ngIf="!isLoggedIn">
+            <button mat-stroked-button (click)="navigateToSignUp()">
+                <span>Register</span>
+            </button>
+            <button mat-stroked-button (click)="navigateToLogin()">
+                <span>Log In</span>
+            </button>
+        </div>
+        <div class="points-container" *ngIf="isLoggedIn">
+            <span>Points: </span>
+            <span>{{ userPoints }}</span>
+        </div>
+        <div class="profile-avatar-container" *ngIf="isLoggedIn">
+            <mat-menu #appMenu="matMenu">
+                <ng-template matMenuContent>
+                    <button *ngIf="isCustomer()" mat-menu-item (click)="navigateToProfile()">
+                        <mat-icon svgIcon="user"></mat-icon>
+                        <span>Profile</span>
+                    </button>
+                    <button mat-menu-item (click)="onLogout()">
+                        <mat-icon svgIcon="logout"></mat-icon>
+                        <span>Log out</span>
+                    </button>
+                </ng-template>
+            </mat-menu>
+
+            <button mat-icon-button [matMenuTriggerFor]="appMenu">
+                <mat-icon svgIcon="user"></mat-icon>
+            </button>
+        </div>
+    </div>
+</header>
+
+<header class="mobile-header" *ngIf="isMobileDevice">
+    <div class="brand-logo">
+        <img src="assets/images/cresmoslogo.svg">
+    </div>
+    
+    <div class="points-container" *ngIf="isLoggedIn">
+        <span>Points: </span>
+        <span>{{ userPoints }}</span>
+    </div>
+
+    <button mat-icon-button (click)="toggleMobileNav()">
+        <mat-icon svgIcon="menu"></mat-icon>
+    </button>
+
+    <div *ngIf="mobileNavOpen" class="mobile-nav-container">
+        <button mat-icon-button (click)="toggleMobileNav()">
+            <mat-icon svgIcon="close"></mat-icon>
+        </button>
+        <mat-nav-list class="nav-list-items">
+            <a mat-list-item (click)="toggleMobileNav()" [routerLink]="navLink.link" routerLinkActive="active-link" *ngFor="let navLink of navLinks">
+                <mat-icon [svgIcon]="navLink.icon"></mat-icon>
+                {{ navLink.text }}
+            </a>
+        </mat-nav-list>
+        <mat-divider></mat-divider>
+        <mat-nav-list *ngIf="!isLoggedIn" class="nav-list-items">
+            <a mat-list-item (click)="toggleMobileNav()" [routerLink]="navLink.link" routerLinkActive="active-link" *ngFor="let navLink of guestLinks">
+                <mat-icon [svgIcon]="navLink.icon"></mat-icon>
+                {{ navLink.text }}
+            </a>
+        </mat-nav-list>
+        <mat-nav-list *ngIf="isLoggedIn" class="nav-list-items">
+            <mat-expansion-panel>
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        <mat-icon svgIcon="profile"></mat-icon>
+                        <span>Profile</span>
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+
+                <a mat-list-item (click)="toggleMobileNav()" [routerLink]="navLink.link" routerLinkActive="active-link" *ngFor="let navLink of profileLinks">
+                    <mat-icon [svgIcon]="navLink.icon"></mat-icon>
+                    {{ navLink.text }}
+                </a>
+                <mat-divider></mat-divider>
+                <a mat-list-item (click)="onLogout()">
+                    <mat-icon svgIcon="logout"></mat-icon>
+                    Log out
+                </a>
+            </mat-expansion-panel>
+        </mat-nav-list>
+    </div>
+    
+</header>

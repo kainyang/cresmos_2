@@ -1,0 +1,12 @@
+<div class="inbox-overlay-container">
+    <h2>{{ inboxItem.messageTitle }}</h2>
+    <div class="message-container">
+        <div>{{ inboxItem.messageDescription }}</div>
+    </div>
+    <div *ngIf="isEventRegistration" class="button-container">
+        <app-validation-message [validationMessages]="validationMessages"></app-validation-message>
+        <button mat-flat-button class="btn-md" (click)="onRegister()" disableRipple>
+            <span class="btn-txt">Accept</span>
+        </button>
+    </div>
+</div>

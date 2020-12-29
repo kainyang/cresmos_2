@@ -1,0 +1,18 @@
+@import '../../../../../assets/custom-variables.scss';
+
+.min-width {
+    min-width: $tablet-max-width;
+}
+
+.nav-expansion {
+    color     : $colour-white;
+    background: $colour-midnight;
+
+    mat-icon {
+        margin-right: $padding-md;
+    }
+}
+
+.link-go-back {
+    color: $colour-white !important;
+}

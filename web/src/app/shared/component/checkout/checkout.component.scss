@@ -1,0 +1,12 @@
+@import '../../../../assets/custom-variables.scss';
+
+.checkout-container {
+    display       : flex;
+    flex-direction: column;
+
+    button {
+        width      : 145px;
+        color      : $colour-white;
+        font-size  : $font-size-md;
+    }
+}

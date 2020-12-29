@@ -1,0 +1,65 @@
+@import '../../assets/custom-variables.scss';
+
+.login {
+    display       : flex;
+    flex-direction: column;
+    align-items   : center;
+    margin-top    : $margin-xxxl;
+
+    .form-container {
+        background    : $colour-midnight;
+        border-radius : 0.25rem;
+        box-shadow    : 0 1.5px 0 0 rgba(0, 0, 0, 0.1);
+        width         : $card-width-medium;
+        display       : flex;
+        flex-direction: column;
+
+        .header {
+            font-size : $font-size-xxl;
+            text-align: center;
+            padding   : $padding-lg;
+            color     : $colour-white;
+        }
+
+        .form-details {
+            color  : $colour-white;
+            padding: $padding-lg;
+            margin : $margin-xl;
+
+            .form-fields {
+                .field {
+                    display      : flex;
+                    margin-bottom: $margin-xl;
+
+                    input {
+                        width        : 100%;
+                        border       : 0;
+                        border-radius: 0.25rem;
+                        padding      : $padding-md;
+                    }
+                }
+            }
+
+            button {
+                width     : 100%;
+                margin-top: $margin-xxl;
+            }
+        }
+
+        .register-link {
+            display       : flex;
+            flex-direction: column;
+            align-self    : center;
+            padding-bottom: $padding-lg;
+
+            a {
+                color         : $colour-white;
+                padding-bottom: $padding-lg;
+            }
+        }
+    }
+
+    app-validation-message {
+        width: $card-width-medium;
+    }
+}

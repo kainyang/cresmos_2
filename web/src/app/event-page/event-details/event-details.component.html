@@ -1,0 +1,72 @@
+<a class="link-go-back" (click)="back()"> &larr; Go back </a>
+<mat-tab-group *ngIf="eventInformation" animationDuration="0ms">
+    <mat-tab label="Participants">
+        <div class="content">
+            <div *ngFor="let teamEvent of teamEvents">
+                <mat-card class="team-card">
+                    <mat-card-header>
+                        <mat-card-title>{{ teamEvent.teamName }}</mat-card-title>
+                    </mat-card-header>
+                    <mat-card-content>
+                        <div *ngFor="let member of teamEvent.membersDetail">
+                            {{ member.userName }}
+                        </div>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+        </div>
+    </mat-tab>
+    <mat-tab label="Bracket">
+        <div class="content">
+            No entry.
+        </div>
+    </mat-tab>
+    <mat-tab label="Prizes">
+        <div class="content">
+            <p>Prize Pool: $500, $300, $200</p>
+            <p>Organised by: Sengkang West CSC & Sengkang West Youth Network</p>
+        </div>
+    </mat-tab>
+    <mat-tab label="Rules">
+        <div class="content">
+            <p>Rules</p>
+            <p>1. Participants to avoid offensive nickname</p>
+            <p>2. Registration fee will be forfeited for no show.</p>
+            <p>3. The organising committee reserves the rights to disqualify the participants if any rules are violated.
+            </p>
+        </div>
+    </mat-tab>
+    <mat-tab label="Schedule">
+        <div class="content">
+            <p>Sengkang West PUBG Mobile Contest 2020</p>
+            <p>22 November 2020</p>
+            <p>10AM to 6PM</p>
+        </div>
+    </mat-tab>
+    <mat-tab label="Contact Us">
+        <div class="content">
+            <span>Contact us: </span>
+            <a href="http://m.me/singaporecybersports" target="_blank">http://m.me/singaporecybersports</a>
+        </div>
+    </mat-tab>
+    <mat-tab label="Announcements">
+        <div class="content">
+            No entry.
+        </div>
+    </mat-tab>
+    <mat-tab label="Apply">
+        <div class="content">
+            <div class="button-container">
+                <button mat-flat-button class="btn-md" (click)="register()" disableRipple [disabled]="isRegistered">
+                    <span class="btn-txt">Register</span>
+                </button>
+                <app-validation-message [validationMessages]="validationMessages"></app-validation-message>
+            </div>
+            <div *ngIf="isRegistered" class="description">
+                <p>Game: Mobile Legends: Bang Bang</p>
+                <p>Registration Fee: S$5 per Team</p>
+                <img src="assets/images/events/paynow/scoga_paynow.PNG">
+            </div>
+        </div>
+    </mat-tab>
+</mat-tab-group>

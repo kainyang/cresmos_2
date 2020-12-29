@@ -1,0 +1,7 @@
+﻿@import '../../../../assets/custom-variables.scss';
+
+.notification-message-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: $margin-xl;
+}

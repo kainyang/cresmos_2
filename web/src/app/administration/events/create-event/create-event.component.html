@@ -1,0 +1,120 @@
+<div class="form-container" *ngIf="!eventCreated">
+    <div class="header">Create an event</div>
+    <div class="form-details">
+        <form [formGroup]="eventForm" class="form-fields">
+
+            <div class="field">
+                <label>Event Name: </label>
+                <input type="text" class="form-input" formControlName="eventName">
+            </div>
+            <app-validation-error [formCtrl]="getFormControl('eventName')"></app-validation-error>
+
+            <div class="field">
+                <label>Event Date: </label>
+                <div class="input-group">
+                    <input class="form-control" placeholder="yyyy-mm-dd" name="dp" [(ngModel)]="dateModel" ngbDatepicker
+                        #dp="ngbDatepicker" [ngModelOptions]="{standalone: true}">
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-secondary calendar" (click)="dp.toggle()"
+                            type="button">📅</button>
+                    </div>
+                </div>
+            </div>
+            <app-validation-error [formCtrl]="getFormControl('eventDate')"></app-validation-error>
+
+            <div class="field">
+                <label>Event Time: </label>
+                <ngb-timepicker [(ngModel)]="time" [ngModelOptions]="{standalone: true}"></ngb-timepicker>
+            </div>
+
+            <div class="field">
+                <label>Event Location: </label>
+                <input type="text" [value]="item" class="form-input" formControlName="location">
+            </div>
+            <app-validation-error [formCtrl]="getFormControl('location')"></app-validation-error>
+
+            <div class="field">
+                <label>Event Type: </label>
+                <div *ngFor="let item of eventTypeKeys">
+                    {{ eventType[item] }}
+                    <input type="radio" [(ngModel)]="selectedEventType" [value]="item" (change)="onEventTypeChanged()"
+                        class="form-input" formControlName="eventType">
+                </div>
+            </div>
+            <app-validation-error [formCtrl]="getFormControl('eventType')"></app-validation-error>
+
+            <div class="field">
+                <label>Points: </label>
+                <input type="number" class="form-input" formControlName="points">
+            </div>
+            <app-validation-error [formCtrl]="getFormControl('points')"></app-validation-error>
+
+            <div class="field">
+                <label>Country: </label>
+                <select [(ngModel)]="selectedCountry" (change)="onCountrySelect()" formControlName="country">
+                    <option *ngFor="let country of countryList" [value]="country.ISOCode">{{country.name}}</option>
+                </select>
+            </div>
+            <app-validation-error [formCtrl]="getFormControl('country')"></app-validation-error>
+
+            <div class="field">
+                <label>Event Image: </label>
+                <app-file-upload (onFileSelected)="fileSelected($event)"></app-file-upload>
+                <span *ngIf="!fileValidationErrors.length" class="file-name">{{ fileName }}</span>
+                <span *ngIf="fileValidationErrors.length" class="file-name">Error! {{ fileValidationErrors }}</span>
+            </div>
+            <app-validation-error [formCtrl]="getFormControl('imageURL')"></app-validation-error>
+
+            <div class="field">
+                <label>Description: </label>
+                <textarea type="text" class="form-input" formControlName="description"> </textarea>
+            </div>
+            <app-validation-error [formCtrl]="getFormControl('description')"></app-validation-error>
+
+            <div class="field">
+                <label>Participation Type: </label>
+                <div *ngFor="let item of participationTypeKeys">
+                    {{ participationType[item] }}
+                    <input type="radio" [(ngModel)]="selectedParticipationType" [value]="item"
+                        (change)="onParticipationTypeChanged()" class="form-input" formControlName="participationType">
+                </div>
+            </div>
+            <app-validation-error [formCtrl]="getFormControl('participationType')"></app-validation-error>
+
+            <div *ngIf="isGroupEvent" class="field">
+                <label>Group Size: </label>
+                <select [(ngModel)]="selectedGroupSize" (change)="onGroupSizeSelect()" formControlName="groupSize">
+                    <option *ngFor="let size of groupSizeList" [value]="size">{{size}}</option>
+                </select>
+            </div>
+            <app-validation-error *ngIf="isGroupEvent" [formCtrl]="getFormControl('groupSize')"></app-validation-error>
+
+            <div class="field">
+                <label>Paid Event: </label>
+                <div *ngFor="let item of paidEventKeys">
+                    {{ paidEvent[item] }}
+                    <input type="radio" [(ngModel)]="selectedPaidEvent" [value]="item"
+                        (change)="onPaidEventTypeChanged()" class="form-input" formControlName="isPaidEvent">
+                </div>
+            </div>
+            <app-validation-error [formCtrl]="getFormControl('isPaidEvent')"></app-validation-error>
+
+            <div *ngIf="isPaidEvent" class="field">
+                <label>Amount: </label>
+                <input type="number" class="form-input" formControlName="amount">
+            </div>
+            <app-validation-error *ngIf="isPaidEvent" [formCtrl]="getFormControl('amount')"></app-validation-error>
+
+        </form>
+        <div class="submit-button">
+            <button mat-flat-button type="button" (click)="submit()" class="btn-md" disableRipple>
+                <span class="btn-txt">Submit</span>
+            </button>
+        </div>
+    </div>
+</div>
+<app-validation-message [validationMessages]="validationMessages"></app-validation-message>
+<div class="form-container" *ngIf="eventCreated">
+    <a (click)="back()">Back</a>
+    <div class="header">Event created!</div>
+</div>

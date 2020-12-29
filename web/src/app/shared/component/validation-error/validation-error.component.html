@@ -1,0 +1,8 @@
+<div class="validation-error-container" *ngIf="errors">
+    <!-- <icon iconId="error-notification-filled" class="icon-md"></icon> -->
+    <div class="validation-error-text-container" *ngFor="let error of errors | keyvalue">
+        <div class="alert alert-danger">
+            <span [appText]="mapPropertyToTextKey(error.key)" [replacements]="error.value"></span>
+        </div>
+    </div>
+</div>

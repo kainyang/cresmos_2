@@ -1,0 +1,101 @@
+<div class="grid">
+    <div *ngIf="!isMobileDevice">
+        <div class="event-card block-full" *ngFor="let eventInfo of eventList">
+            <div class="card-details card-with-shadow-toplight-large">
+                <div class="card-left-content card-transparent-medium">
+                    <img src="{{ eventInfo.imageURL }}">
+                </div>
+                <div class="card-middle-content">
+                    <div class="event-header">
+                        <h3>{{ eventInfo.eventName }}</h3>
+                    </div>
+                    <div class="card-row">
+                        <div class="card-with-shadow-toplight-small">
+                            <div class="card-row-header">
+                                <mat-icon svgIcon="date"></mat-icon>
+                            </div>
+                            <div class="card-row-details">
+                                <span>{{ eventInfo.eventDate | date }}</span>
+                            </div>
+                        </div>
+                        <div class="card-with-shadow-toplight-small">
+                            <div class="card-row-header">
+                                <mat-icon svgIcon="location"></mat-icon>
+                            </div>
+                            <div class="card-row-details">
+                                <span>{{ eventInfo.location }}</span>
+                                <span class="small-font">{{ eventInfo.country }}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-row">
+                        <div class="card-with-shadow-toplight-small">
+                            <div class="card-row-header">
+                                <mat-icon svgIcon="time"></mat-icon>
+                            </div>
+                            <div class="card-row-details">
+                                <span>{{ eventInfo.eventDate | date:'shortTime' }}</span>
+                            </div>
+                        </div>
+                        <div class="card-with-shadow-toplight-small">
+                            <div class="card-row-header">
+                                <mat-icon svgIcon="{{ getEventTypeIcon(eventInfo.eventType) }}"></mat-icon>
+                            </div>
+                            <div class="card-row-details">
+                                <span>{{ getEventTypeText(eventInfo.eventType) }}</span>
+                                <span
+                                    class="small-font">{{ getParticipationTypeText(eventInfo.participationType) }}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-right-content">
+                    <div class="right-content-header">
+                        <button mat-flat-button class="btn-md" (click)="openOverlay(eventInfo)" disableRipple>
+                            <span class="btn-txt">Learn more</span>
+                        </button>
+                    </div>
+                    <div class="right-content-details card-with-shadow-toplight-medium">
+                        <span>{{ eventInfo.points }} Points</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div *ngIf="isMobileDevice">
+        <mat-card class="mobile-card" *ngFor="let eventInfo of eventList">
+            <mat-card-header>
+                <div mat-card-avatar class="example-header-image"></div>
+                <mat-card-title>{{ eventInfo.eventName }}</mat-card-title>
+            </mat-card-header>
+            <img mat-card-image src="{{ eventInfo.imageURL }}">
+            <mat-card-content>
+                <div class="card-row-details">
+                    <mat-icon svgIcon="date"></mat-icon>
+                    <span>{{ eventInfo.eventDate | date }}</span>
+                </div>
+                <div class="card-row-details">
+                    <mat-icon svgIcon="time"></mat-icon>
+                    <span>{{ eventInfo.eventDate | date:'shortTime' }}</span>
+                </div>
+                <div class="card-row-details">
+                    <mat-icon svgIcon="location"></mat-icon>
+                    <span>{{ eventInfo.location }}</span>
+                    <span class="small-font">{{ eventInfo.country }}</span>
+                </div>
+                <div class="card-row-details">
+                    <mat-icon svgIcon="{{ getEventTypeIcon(eventInfo.eventType) }}"></mat-icon>
+                    <span>{{ getEventTypeText(eventInfo.eventType) }}</span>
+                    <span class="small-font">{{ getParticipationTypeText(eventInfo.participationType) }}</span>
+                </div>
+                <div class="card-row-details">
+                    <span>{{ eventInfo.points }} Points</span>
+                </div>
+            </mat-card-content>
+            <mat-card-actions>
+                <button mat-flat-button (click)="openOverlay(eventInfo)">Learn more</button>
+            </mat-card-actions>
+        </mat-card>
+    </div>
+</div>

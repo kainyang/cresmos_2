@@ -1,0 +1,97 @@
+<div class="grid">
+
+    <div class="block-full">
+        <div class="full-card">
+            <div class="user-detail-container">
+
+                <div class="user-avatar">
+                    <div class="short-name-container">
+                        <span>{{ shortName }}</span>
+                    </div>
+                    <div *ngIf="false" class="img-container">
+                        <img src="assets/images/vault/icon/geralt.png">
+                    </div>
+                </div>
+
+                <div class="user-detail">
+                    <div class="username-container">
+                        <span class="username">{{ fullName }}</span>
+                        <span class="flag-icon flag-icon-sg flag-icon-squared"></span>
+                    </div>
+                    <!-- <div class="progress-bar">
+                        <mat-progress-bar [value]="value" [mode]="mode"></mat-progress-bar>
+                        <div class="progress-value">
+                            <span>300 / 1000</span>
+                        </div>
+                    </div> -->
+                    <!-- <div *ngIf="userDashboard" class="points-container">
+                        <span>Points available: {{ userDashboard.points }}</span>
+                    </div> -->
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="block-full">
+        <div class="section-header full-card">
+            <span>GAMES</span>
+        </div>
+    </div>
+    <div class="block-full">
+        <div class="full-card">
+            <div class="games-container">
+                <div class="games-icon-container">
+                    <div class="games-icon" *ngFor="let gameIcon of gamesIcon">
+                        <div class="img-container">
+                            <img src="{{ gameIcon.imageURL }}">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="block-full">
+        <div class="section-header full-card">
+            <span>COLLECTION</span>
+        </div>
+    </div>
+    <div class="dashboard-card block-third half-card-1">
+        <mat-icon svgIcon="profile"></mat-icon>
+        <label>ICONS</label>
+        <label class="count">{{ iconCount }}</label>
+    </div>
+    <div class="dashboard-card block-third half-card-1">
+        <mat-icon svgIcon="border"></mat-icon>
+        <label>BORDERS</label>
+        <label class="count">18</label>
+    </div>
+    <div class="dashboard-card block-third half-card-1">
+        <mat-icon svgIcon="trophy"></mat-icon>
+        <label>ACHIEVEMENTS</label>
+        <label class="count">27</label>
+    </div>
+
+    <div class="block-full">
+        <div class="section-header full-card">
+            <span>TOURNAMENT RESULTS</span>
+        </div>
+    </div>
+    <div class="dashboard-card block-third third-card">
+        <img [src]="getGameIcon(gameTitle.Hearthstone)">
+        <label>IGNITE CUP</label>
+        <label [ngClass]="getPlacingColour(1)">1ST PLACE</label>
+    </div>
+    <div class="dashboard-card block-third third-card">
+        <img [src]="getGameIcon(gameTitle.Hearthstone)">
+        <label>HS CHAMPIONSHIP</label>
+        <label [ngClass]="getPlacingColour(2)">2ND PLACE</label>
+    </div>
+    <div class="dashboard-card block-third third-card">
+        <img [src]="getGameIcon(gameTitle.LeageOfLegends)">
+        <label>REGIONAL CHAMPIONSHIP</label>
+        <label [ngClass]="getPlacingColour(3)">3RD PLACE</label>
+    </div>
+
+</div>

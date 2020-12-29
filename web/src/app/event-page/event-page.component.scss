@@ -1,0 +1,90 @@
+@import '../../assets/custom-variables.scss';
+
+.grid {
+    place-content: center;
+}
+
+.event-card {
+    display      : flex;
+    margin-bottom: $margin-xxl;
+
+    .card-details {
+        display        : flex;
+        justify-content: space-between;
+
+        .card-left-content {
+            img {
+                width: 100%;
+            }
+        }
+
+        .card-middle-content {
+            display       : flex;
+            flex-direction: column;
+            padding       : $padding-xl;
+
+            .event-header {
+                display: flex;
+                color  : $colour-white;
+            }
+
+            .card-row {
+                display: flex;
+
+                .card-row-header {
+                    color  : $colour-white;
+                    padding: $padding-xs;
+                }
+
+                .card-row-details {
+                    display        : flex;
+                    flex-direction : column;
+                    justify-content: flex-end;
+                    text-align     : right;
+                    font-weight    : bold;
+                    font-size      : $font-size-xl;
+                    color          : $colour-white;
+                    padding        : $padding-md;
+
+                }
+            }
+        }
+
+        .card-right-content {
+            display       : flex;
+            flex-direction: column;
+
+            .right-content-header {
+                display        : flex;
+                justify-content: space-between;
+                margin-bottom  : $margin-sm;
+
+                .event-icon-container {
+                    padding: $padding-xl;
+                }
+
+                button {
+                    width                     : 145px;
+                    border-radius             : unset;
+                    border-bottom-left-radius : 0.5rem;
+                    border-bottom-right-radius: 0.5rem;
+                    font-size                 : $font-size-md;
+                }
+            }
+
+            .right-content-details {
+                display        : flex;
+                justify-content: center;
+                align-items    : center;
+                font-weight    : bold;
+                font-size      : $font-size-xxl;
+                color          : $colour-white;
+            }
+        }
+    }
+
+    .small-font {
+        font-weight: normal;
+        font-size  : $font-size-sm;
+    }
+}

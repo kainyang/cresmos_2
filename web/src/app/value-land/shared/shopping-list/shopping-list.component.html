@@ -1,0 +1,27 @@
+<div class="grid">
+    <mat-card class="card" *ngFor="let item of items">
+        <mat-card-header>
+            <mat-card-title>{{ item.name }}</mat-card-title>
+        </mat-card-header>
+        <img src="{{ item.image }}">
+        <mat-card-content>
+            <div class="row">
+                <span>Price:&nbsp;</span>
+                <span>${{ item.cashValue }}</span>
+            </div>
+            <div class="row">
+                <span>Points:&nbsp;</span>
+                <span>{{ item.pointValue }}</span>
+            </div>
+            <div class="row">
+                <span>Rarity:&nbsp;</span>
+                <span>Legendary</span>
+            </div>
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-flat-button class="btn-md" (click)="purchase(item)" disableRipple>
+                <span class="btn-txt">Purchase</span>
+            </button>
+        </mat-card-actions>
+    </mat-card>
+</div>

@@ -1,0 +1,28 @@
+<div class="block-full login">
+    <div class="form-container">
+        <div class="header">Log In</div>
+        <div class="form-details">
+            <form [formGroup]="loginForm" class="form-fields">
+
+                <div class="field">
+                    <input type="text" class="form-input" placeholder="Username" formControlName="userName">
+                </div>
+                <app-validation-error [formCtrl]="getFormControl('userName')"></app-validation-error>
+
+                <div class="field">
+                    <input type="password" class="form-input" placeholder="Password" formControlName="password">
+                </div>
+                <app-validation-error [formCtrl]="getFormControl('password')"></app-validation-error>
+
+                <button mat-flat-button type="submit" class="btn-md" (click)="login()" disableRipple>
+                    <span class="btn-txt">Login</span>
+                </button>
+            </form>
+        </div>
+        <div class="register-link">
+            <a [routerLink]="['/register']">Create your Cresmos account!</a>
+            <a [routerLink]="['/forget-password']">Forgot your password?</a>
+        </div>
+    </div>
+    <app-validation-message [validationMessages]="validationMessages"></app-validation-message>
+</div>

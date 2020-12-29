@@ -1,0 +1,19 @@
+@import '../../../../../assets/custom-variables.scss';
+
+.block-full {
+    min-width: $tablet-max-width;
+}
+
+
+@media screen and (max-width: $tablet-max-width) {
+    .block-full {
+        min-width: $tablet-max-width;
+    }
+
+}
+
+@media screen and (max-width: $mobile-max-width) {
+    .block-full {
+        min-width: $mobile-max-width;
+    }
+}

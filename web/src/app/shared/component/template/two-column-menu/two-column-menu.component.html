@@ -1,0 +1,32 @@
+﻿<app-tab-nav *ngIf="!isMobileDevice" [navAreaOverride]="true"></app-tab-nav>
+<a *ngIf="showBackLink" class="link-go-back" (click)="back()">
+    &larr; Go back
+</a> 
+<div class="grid min-width" *ngIf="!isMobileDevice">
+    <div class="block-quarter">
+        <app-nav-list [navLinks]="navLinks"></app-nav-list>
+    </div>
+    <div class="block-three-quarter">
+        <router-outlet></router-outlet>
+    </div>
+</div>
+
+<div class="grid" *ngIf="isMobileDevice">
+    <div class="block-full">
+        <mat-expansion-panel class="nav-expansion">
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    <mat-icon svgIcon="category"></mat-icon>
+                    <span> Show categories </span>
+                </mat-panel-title>
+            </mat-expansion-panel-header>
+
+            <app-nav-list [navLinks]="navLinks"></app-nav-list>
+        </mat-expansion-panel>
+    </div>
+    <div class="block-full">
+        <router-outlet></router-outlet>
+    </div>
+</div>
+
+<!-- make this mobile responsive -->

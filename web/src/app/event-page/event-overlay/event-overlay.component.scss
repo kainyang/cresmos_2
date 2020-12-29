@@ -1,0 +1,49 @@
+@import '../../../assets/custom-variables.scss';
+
+.event-overlay-container {
+    display: flex;
+    height : 650px;
+    width  : 1200px;
+    padding: $padding-xxl;
+
+    .left-content {
+        display        : flex;
+        width          : 30%;
+        justify-content: center;
+        background     : $colour-navy;
+        border         : 1px;
+        border-radius  : 1rem;
+        height         : 600px;
+    }
+
+    .right-content {
+        display       : flex;
+        flex-direction: column;
+        align-items   : center;
+        padding       : $padding-xxl;
+        width         : 70%;
+        color         : $colour-white;
+
+        .details-container {
+            height    : 400px;
+            overflow-y: auto;
+        }
+
+        .button-container {
+            display    : flex;
+            padding    : $padding-xxl;
+            align-self : flex-end;
+            align-items: center;
+
+            button {
+                width      : 145px;
+                margin-left: $margin-lg;
+                font-size  : $font-size-md;
+            }
+
+            app-validation-message {
+                margin-right: $margin-lg;
+            }
+        }
+    }
+}

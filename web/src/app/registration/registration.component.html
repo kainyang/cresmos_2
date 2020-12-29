@@ -1,0 +1,62 @@
+<div class="registration">
+    <div class="form-container" *ngIf="!isSubmitted">
+        <div class="header">Create a new account!</div>
+        <div class="form-details">
+            <form [formGroup]="registrationForm" class="form-fields">
+
+                <div class="field">
+                    <input type="text" class="form-input" placeholder="Username"
+                        formControlName="userName">
+                </div>
+                <app-validation-error [formCtrl]="getFormControl('userName')"></app-validation-error>
+
+                <div class="field">
+                    <input type="text" class="form-input" placeholder="First name"
+                        formControlName="firstName">
+                </div>
+                <app-validation-error [formCtrl]="getFormControl('firstName')"></app-validation-error>
+
+                <div class="field">
+                    <input type="text" class="form-input" placeholder="Last name"
+                        formControlName="lastName">
+                </div>
+                <app-validation-error [formCtrl]="getFormControl('lastName')"></app-validation-error>
+
+                <div class="field">
+                    <input type="email" class="form-input" placeholder="Email" ngModel email="true"
+                        formControlName="email">
+                </div>
+                <app-validation-error [formCtrl]="getFormControl('email')"></app-validation-error>
+
+                <div class="field">
+                    <input type="password" class="form-input" placeholder="Password"
+                        formControlName="password">
+                </div>
+                <app-validation-error [formCtrl]="getFormControl('password')"></app-validation-error>
+
+                <div class="field">  
+                    <input type="password" class="form-input" placeholder="Repeat Password"
+                        formControlName="confirmPassword">
+                </div>
+                <app-validation-error [formCtrl]="getFormControl('confirmPassword')"></app-validation-error>
+
+            </form>
+            <button mat-flat-button type="button" (click)="onSubmit()" class="btn-md" disableRipple>
+                <span class="btn-txt">Submit</span>
+            </button>
+        </div>
+        <div class="register-link">
+            <a [routerLink]="['/login']">Back to log in</a>
+        </div>
+    </div>
+    <app-validation-message [validationMessages]="validationMessages"></app-validation-message>
+    <div class="form-container" *ngIf="isSubmitted">
+        <div class="header">Account created!</div>
+        <div class="content">
+            <p>Please visit your email to confirm your email address.</p>
+        </div>
+        <div class="register-link">
+            <a [routerLink]="['/login']">Back to log in</a>
+        </div>
+    </div>
+</div> 

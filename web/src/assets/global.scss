@@ -1,0 +1,88 @@
+@import './fonts.scss';
+@import './custom-variables.scss';
+@import './common/buttons.scss';
+@import './common/grid.scss';
+@import './common//cards.scss';
+@import './theme.scss';
+
+.app-container {
+    display: flex;
+}
+
+.app-inner-container {
+    flex      : 1 1 auto;
+    display   : flex;
+    flex-flow : column nowrap;
+    min-height: 100vh;
+    width     : 100%;
+    background: linear-gradient(0deg, rgba(4, 24, 40, 1) 0%, rgba(12, 44, 68, 1) 100%);
+
+    .app-header,
+    .app-footer {
+        flex-shrink: 0;
+    }
+
+    .app-body {
+        flex          : 1 1 auto;
+        padding-bottom: 2 * $scroll-to-top-arrow-size;
+        margin-top    : $header-menu-top-height;
+        position      : relative;
+        align-self    : center;
+
+        &.app-container-mobile {
+            // margin-top: $header-menu-mobile-height;
+            align-self: unset;
+        }
+    }
+}
+
+@media screen and (max-width: $tablet-max-width) {
+    .app-container {
+        width: $tablet-max-width;
+    }
+}
+
+@media screen and (max-width: $mobile-max-width) {
+    .app-container {
+        width: $mobile-max-width;
+    }
+}
+
+@media print {
+
+    .app-container,
+    .app-inner-container {
+        display: block;
+    }
+}
+
+h1,
+h2 {
+    color: $colour-white;
+}
+
+.mobile-card {
+    max-width       : 400px;
+    color           : $colour-white;
+    background-color: $colour-midnight;
+    margin-top      : $margin-lg;
+
+    .card-row-details {
+        font-size: $font-size-md;
+        margin   : $margin-md $margin-md 0 $margin-md;
+
+        mat-icon {
+            margin-right: $margin-md;
+        }
+
+        span {
+            margin-right: $margin-md;
+        }
+    }
+
+    mat-card-actions {
+        display        : flex;
+        justify-content: flex-end;
+        padding        : 0 $padding-md $padding-md $padding-md;
+    }
+}

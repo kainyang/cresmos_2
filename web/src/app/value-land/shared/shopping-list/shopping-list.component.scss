@@ -1,0 +1,57 @@
+@import '../../../../assets/custom-variables.scss';
+
+.grid {
+    padding: unset;
+}
+
+.card {
+    max-width : 400px;
+    background: $colour-midnight;
+    color     : $colour-white;
+    margin    : 0 $margin-sm $margin-md 0;
+
+    .row {
+        padding: $padding-md 0 0 $padding-md;
+    }
+}
+
+.bronze-border {
+    border-style: outset !important;
+    border-color: $colour-bronze !important;
+    border-width: 5px !important;
+}
+
+.silver-border {
+    border-style: outset !important;
+    border-color: $colour-silver !important;
+    border-width: 5px !important;
+}
+
+.gold-border {
+    border-style: outset !important;
+    border-color: $colour-gold !important;
+    border-width: 5px !important;
+}
+
+.epic-border {
+    border-style: outset !important;
+    border-color: $colour-epic !important;
+    border-width: 5px !important;
+}
+
+.legendary-border {
+    border-style: outset !important;
+    border-color: $colour-legendary !important;
+    border-width: 5px !important;
+}
+
+.main-content-grid {
+    margin: unset;
+}
+
+
+@media screen and (max-width: $mobile-max-width) {
+    .grid {
+        justify-content: center;
+    }
+}

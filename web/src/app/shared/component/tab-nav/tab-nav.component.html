@@ -1,0 +1,23 @@
+﻿<div class="tab-nav" *ngIf="tabNavLinks.length > 0; else backLink">
+    <nav mat-tab-nav-bar>
+        <ng-container *ngFor="let tabNavLink of tabNavLinks">
+            <a *ngIf="tabNavLink.active"
+               mat-tab-link
+               [routerLink]="tabNavLink.link"
+               routerLinkActive #rla="routerLinkActive"
+               [active]="rla.isActive">
+                <span class="{{tabNavLink.icon}}"></span>
+                <span class="font-link-md">{{tabNavLink.text}}</span>
+            </a>
+            <a *ngIf="!tabNavLink.active" mat-tab-link class="disabled-link">
+                <span class="{{tabNavLink.icon}}"></span>
+                <span class="font-link-md">{{tabNavLink.text}}</span>
+            </a>
+        </ng-container>
+    </nav>
+</div>
+<ng-template #backLink>
+    <!-- <a class="link-go-back" (click)="back()">
+        Go back
+    </a> -->
+</ng-template>

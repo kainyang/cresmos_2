@@ -1,0 +1,6 @@
+<div class="checkout-container">
+    <button mat-flat-button (click)="checkout($event)" [disabled]="disableButton || loading">
+        <div *ngIf="!loading">Pay ${{ amount / 100 }}.00</div>
+        <div *ngIf="loading">Loading...</div>
+    </button>
+</div>

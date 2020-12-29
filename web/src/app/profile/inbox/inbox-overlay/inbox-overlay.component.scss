@@ -1,0 +1,29 @@
+@import '../../../../assets/custom-variables.scss';
+
+.inbox-overlay-container {
+    display       : flex;
+    flex-direction: column;
+    height        : 650px;
+    width         : 1200px;
+    padding       : $padding-xxl;
+
+    .message-container {
+        display   : flex;
+        height    : 100%;
+        margin-top: $margin-lg;
+        color     : $colour-white;
+    }
+
+    .button-container {
+        display    : flex;
+        padding    : $padding-xxl;
+        align-self : flex-end;
+        align-items: center;
+
+        button {
+            width      : 145px;
+            margin-left: $margin-lg;
+            font-size  : $font-size-md;
+        }
+    }
+}

@@ -1,0 +1,53 @@
+@import '../../../../assets/custom-variables.scss';
+
+.full-card {
+    .form-container {
+        background    : $colour-midnight;
+        width         : 100%;
+        display       : flex;
+        flex-direction: column;
+        padding       : $padding-xxl;
+
+        .form-details {
+            color  : $colour-white;
+            padding: $padding-lg;
+            margin : $margin-xl;
+
+            .form-fields {
+                .field-row {
+                    display        : flex;
+                    justify-content: flex-start;
+
+                    .field {
+                        display       : flex;
+                        flex-direction: column;
+                        margin        : 0 $margin-xl $margin-xl 0;
+
+                        input {
+                            width           : $input-width;
+                            color           : $colour-white;
+                            background-color: $colour-navy;
+                            border          : 0;
+                            border-radius   : 0.25rem;
+                            padding         : $padding-md;
+                        }
+                    }
+                }
+            }
+        }
+
+        button {
+            align-self: flex-end;
+            margin-top: $margin-xxl;
+        }
+
+        .register-link {
+            align-self    : center;
+            padding-bottom: $padding-lg;
+
+            a {
+                color: $colour-white;
+            }
+        }
+    }
+}

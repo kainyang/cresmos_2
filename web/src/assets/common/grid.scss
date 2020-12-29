@@ -1,0 +1,83 @@
+﻿@import '../custom-variables.scss';
+
+.grid {
+    box-sizing : border-box;
+    max-width  : $tablet-max-width;
+    margin     : auto;
+    padding    : $padding-md;
+    display    : flex;
+    flex-wrap  : wrap;
+    flex       : 0 0 100%;
+    align-items: stretch;
+
+    [class*="block"] {
+        box-sizing: border-box;
+        padding   : $padding-md;
+
+        .content {
+            box-sizing: border-box;
+            flex      : 0 0 100%;
+            max-width : 100%;
+        }
+    }
+
+    .block-full {
+        flex     : 0 0 100%;
+        max-width: 100%;
+    }
+
+    .block-three-quarter {
+        flex     : 0 0 75%;
+        max-width: 75%;
+    }
+
+    .block-half {
+        flex     : 0 0 50%;
+        max-width: 50%;
+    }
+
+    .block-quarter {
+        flex     : 0 0 25%;
+        max-width: 25%;
+    }
+}
+
+@media screen and (max-width: $tablet-max-width) {
+    .grid {
+        padding: $padding-lg;
+
+        [class*="block"] {
+            padding: $padding-sm;
+        }
+
+        .block-half {
+            flex     : 0 0 100%;
+            max-width: 100%;
+        }
+
+        .block-quarter {
+            flex     : 0 0 50%;
+            max-width: 50%;
+        }
+    }
+}
+
+@media screen and (max-width: $mobile-max-width) {
+    .grid {
+        padding: $padding-md;
+
+        [class*="block"] {
+            padding: $padding-sm;
+        }
+
+        .block-three-quarter {
+            flex     : 0 0 100%;
+            max-width: 100%;
+        }
+
+        .block-quarter {
+            flex     : 0 0 100%;
+            max-width: 100%;
+        }
+    }
+}

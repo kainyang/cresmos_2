@@ -1,0 +1,170 @@
+@import '../../../assets/custom-variables.scss';
+
+.full-card {
+    display       : flex;
+    flex-direction: column;
+    padding       : $padding-xxxl;
+    margin-bottom : $margin-xxl;
+}
+
+.user-detail-container {
+    display: flex;
+
+    .user-avatar {
+        height       : 150px;
+        width        : 150px;
+        border       : 1px;
+        border-radius: 0.5rem;
+        background   : $colour-primary;
+
+        .short-name-container {
+            display        : flex;
+            flex-direction : column;
+            justify-content: center;
+            height         : inherit;
+            color          : $colour-white;
+            font-size      : $font-size-super;
+            font-weight    : bold;
+            text-align     : center;
+        }
+
+        img {
+            border-radius: 0.5rem;
+            width        : 150px;
+        }
+    }
+
+    .user-detail {
+        display        : flex;
+        flex-direction : column;
+        justify-content: space-evenly;
+        align-items    : center;
+        padding        : 0px $padding-xxxl;
+
+        .username-container {
+            .username {
+                font-size   : $font-size-xl;
+                font-weight : bold;
+                color       : $colour-white;
+                margin-right: $margin-md;
+            }
+
+            .flag-icon {
+                border       : 1px;
+                border-radius: 0.15rem;
+            }
+        }
+
+        .progress-bar {
+            width           : 250px;
+            background-color: transparent;
+
+            .progress-value {
+                position  : absolute;
+                align-self: center;
+            }
+        }
+
+        .points-container {
+            font-size  : $font-size-xl;
+            color      : $colour-white;
+            font-weight: bold;
+        }
+    }
+
+    .user-stats {
+        display     : flex;
+        align-items : center;
+        padding-left: $padding-xxxl;
+        font-size   : $font-size-xl;
+        font-weight : bold;
+        color       : $colour-white;
+    }
+}
+
+.games-container {
+    display        : flex;
+    justify-content: center;
+    align-items    : center;
+    padding        : $padding-xxxl;
+
+    .games-icon-container {
+        display: flex;
+
+        .games-icon {
+            display        : flex;
+            justify-content: center;
+            align-items    : center;
+            height         : 100px;
+            width          : 100px;
+            background     : $colour-navy;
+            border         : 1px;
+            border-radius  : 0.5rem;
+            margin-right   : $margin-xxl;
+
+            .img-container {
+                width: 60px;
+
+                img {
+                    height: 100%;
+                    width : 100%;
+                }
+            }
+
+        }
+    }
+
+}
+
+.dashboard-card {
+    display       : flex;
+    flex-direction: column;
+    align-items   : center;
+    margin-bottom : $margin-xxl;
+
+    mat-icon {
+        height: 100px;
+        width : 100px;
+        fill  : $colour-gold
+    }
+
+    label {
+        height     : auto;
+        text-align : center;
+        padding    : $padding-md;
+        color      : $colour-white;
+        font-weight: bold;
+        font-size  : $font-size-xxl;
+    }
+
+    img {
+        height: 100px;
+        width : 100px;
+    }
+
+    .count {
+        font-size: $font-size-super;
+    }
+}
+
+.section-header {
+    text-align : center;
+    color      : $colour-white;
+    background : $colour-midnight;
+    padding    : $padding-sm;
+    font-weight: bold;
+    font-size  : $font-size-xxxl;
+    margin     : unset;
+}
+
+.gold {
+    color: $colour-gold !important;
+}
+
+.silver {
+    color: $colour-silver !important;
+}
+
+.bronze {
+    color: $colour-bronze !important;
+}

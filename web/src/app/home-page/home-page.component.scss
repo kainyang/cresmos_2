@@ -1,0 +1,13 @@
+@import '../../assets/custom-variables.scss';
+
+
+.carousel-container {
+    margin-bottom : $margin-xxxxl;
+
+    h2 {
+        font-weight  : bold;
+        background   : $colour-primary;
+        padding      : 16px;
+        border-radius: 5px;
+    }
+}

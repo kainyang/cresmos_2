@@ -1,0 +1,27 @@
+﻿@import '~@angular/material/theming';
+@import './custom-variables.scss';
+
+$custom-typography: mat-typography-config($font-family: 'Metropolis Regular',
+    $body-1: mat-typography-level($font-size-xs, $line-height-xs, $font-weight-regular),
+    $body-2: mat-typography-level($font-size-xs, $line-height-xs, $font-weight-bold),
+    $caption: mat-typography-level($font-size-xxs, $line-height-xxs, $font-weight-regular),
+    $button: mat-typography-level($font-size-xs, $line-height-xs, $font-weight-regular));
+
+@include mat-core($custom-typography);
+
+// $theme-primary: mat-palette($custom-pink);
+// $theme-accent : mat-palette($custom-wine);
+// $theme-warn   : mat-palette($mat-red);
+
+// $theme: mat-light-theme($theme-primary, $theme-accent, $theme-warn);
+
+// @include angular-material-theme($theme);
+
+.cdk-global-overlay-wrapper {
+    align-items    : center;
+    justify-content: center;
+}
+ 
+.cdk-overlay-backdrop.cdk-overlay-backdrop-showing {
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
+}

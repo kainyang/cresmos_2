@@ -1,0 +1,151 @@
+@import '../../../../assets/custom-variables.scss';
+
+header {
+    display        : flex;
+    flex-direction : row;
+    position       : fixed;
+    top            : 0;
+    left           : 0;
+    right          : 0;
+    z-index        : 400;
+    min-height     : $header-menu-height;
+    background     : $colour-midnight;
+    justify-content: space-between;
+    padding        : $padding-sm;
+
+    img {
+        height: $icon-size-layout;
+    }
+
+    .right-content {
+        display: flex;
+
+        .button-container {
+            display: flex;
+            padding: $padding-md;
+
+            button {
+                font-size   : $font-size-md;
+                margin-right: $margin-xxl;
+            }
+        }
+
+        .profile-avatar-container {
+            display     : flex;
+            padding     : $padding-xs;
+            margin-right: $margin-xxl;
+
+            .avatar-display {
+                height         : $circle-height-xs;
+                width          : $circle-width-xs;
+                border         : 5px;
+                border-radius  : 10%;
+                background     : $colour-midnight;
+                display        : flex;
+                justify-content: center;
+                padding-top    : 5px;
+                box-shadow     : 2px 2px 3px $colour-black, -0.1px -0.1px 3px $colour-white;
+
+                .user-initials {
+                    font-weight: bold;
+                    color      : $colour-white;
+                }
+            }
+
+            button {
+                background: transparent;
+                align-self: center;
+
+                mat-icon {
+                    fill: $colour-primary;
+                }
+            }
+        }
+
+        .points-container {
+            color        : $colour-white;
+            align-self   : center;
+            margin-right : $margin-xxxl;
+            border-width : thin;
+            border       : solid;
+            padding      : 6px;
+            border-radius: 0.5rem;
+        }
+    }
+}
+
+.mobile-header {
+    position: fixed;
+    top     : 0;
+    left    : 0;
+    right   : 0;
+    bottom  : 0;
+    z-index : 400;
+    height  : $header-menu-mobile-height;
+    width   : $mobile-max-width;
+
+    .points-container {
+        color        : $colour-white;
+        align-self   : center;
+        margin-right : $margin-xxxxxl;
+        border-width : thin;
+        border       : solid;
+        padding      : 6px;
+        border-radius: 0.5rem;
+    }
+
+    button {
+        background: transparent;
+        margin    : $margin-lg;
+
+        mat-icon {
+            fill: $colour-primary;
+        }
+    }
+
+    .mobile-nav-container {
+        display       : flex;
+        flex-direction: column;
+        align-items   : flex-end;
+        position      : fixed;
+        background    : $colour-midnight;
+        top           : 0;
+        bottom        : 0;
+        left          : 0;
+        right         : 0;
+        z-index       : 100;
+
+        .nav-list-items {
+            justify-content: center;
+            color          : $colour-white;
+            background     : $colour-midnight;
+
+            mat-icon {
+                padding-right: $padding-sm;
+            }
+        }
+    }
+}
+
+.margin-right-xxxl {
+    margin-right: $margin-xxxl;
+}
+
+.active-link {
+    background: $colour-primary;
+    opacity   : 0.8;
+}
+
+.mat-nav-list {
+    width: 100%;
+}
+
+.mat-list-item-content {
+    justify-content: center;
+}
+
+.mat-divider {
+    width : 100%;
+    margin: $margin-md 0 $margin-md 0;
+    color : $colour-white;
+}

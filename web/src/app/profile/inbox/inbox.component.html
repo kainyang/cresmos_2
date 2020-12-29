@@ -1,0 +1,70 @@
+<div class="block-full">
+  <table *ngIf="!isMobileDevice" mat-table [dataSource]="inboxList">
+
+    <ng-container matColumnDef="messageTitle">
+      <th mat-header-cell *matHeaderCellDef> Name </th>
+      <td mat-cell *matCellDef="let element"> {{ element.messageTitle }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="messageType">
+      <th mat-header-cell *matHeaderCellDef> Type </th>
+      <td mat-cell *matCellDef="let element"> {{ getActivityType(element.messageType) }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="messageDate">
+      <th mat-header-cell *matHeaderCellDef> Date Sent </th>
+      <td mat-cell *matCellDef="let element"> {{ element.messageDate }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="sender">
+      <th mat-header-cell *matHeaderCellDef> Sent By </th>
+      <td mat-cell *matCellDef="let element"> {{ element.sender }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="status">
+      <th mat-header-cell *matHeaderCellDef> Status </th>
+      <td mat-cell *matCellDef="let element"> {{ getMessageStatus(element.status) }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="action">
+      <th mat-header-cell *matHeaderCellDef> Action </th>
+      <td mat-cell *matCellDef="let element">
+        <a (click)="viewMessage(element)" href="javascript:void(0)">View</a>
+        <a (click)="deleteMessage(element)" href="javascript:void(0)">Delete</a>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+  <div *ngIf="isMobileDevice">
+    <mat-card class="mobile-card" *ngFor="let inboxInfo of inboxList">
+      <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title>{{ inboxInfo.eventName }}</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <div class="card-row-details">
+          <mat-icon svgIcon="date"></mat-icon>
+          <span>{{ inboxInfo.eventDate | date }}</span>
+        </div>
+        <div class="card-row-details">
+          <mat-icon svgIcon="time"></mat-icon>
+          <span>{{ inboxInfo.eventDate | date:'shortTime' }}</span>
+        </div>
+        <div class="card-row-details">
+          <mat-icon svgIcon="location"></mat-icon>
+          <span>{{ inboxInfo.location }}</span>
+          <span class="small-font">{{ inboxInfo.country }}</span>
+        </div>
+        <div class="card-row-details">
+          <span>{{ inboxInfo.points }}</span>
+        </div>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-flat-button (click)="openOverlay(eventInfo)">Learn more</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>

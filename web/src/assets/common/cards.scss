@@ -1,0 +1,73 @@
+@import '../custom-variables.scss';
+
+.card-with-shadow-toplight-large {
+    background   : $colour-midnight;
+    height       : $card-height-large;
+    width        : 100%;
+    border       : 1px;
+    border-radius: 25px;
+    box-shadow   : 2px 2px 3px $colour-black, -0.1px -0.1px 3px $colour-white;
+}
+
+.card-with-shadow-toplight-medium {
+    background   : $colour-midnight;
+    height       : 200px;
+    width        : 200px;
+    border       : 1px;
+    border-radius: 5px;
+    box-shadow   : 2px 2px 3px $colour-black, -0.1px -0.1px 3px $colour-white;
+    margin       : $margin-xl $margin-xl $margin-xl 0;
+}
+
+.card-with-shadow-toplight-small {
+    display        : flex;
+    justify-content: space-between;
+    background     : $colour-midnight;
+    height         : 100px;
+    width          : 170px;
+    border         : 1px;
+    border-radius  : 5px;
+    box-shadow     : 2px 2px 3px $colour-black, -0.1px -0.1px 3px $colour-white;
+    margin         : $margin-xl $margin-xl $margin-xl 0;
+}
+
+.shopping-list-card {
+    display        : flex;
+    overflow        : hidden;
+    background     : $colour-midnight;
+    height         : 430px;
+    border         : 1px;
+    border-radius  : 5px;
+    box-shadow      : 0 2px 1px -1px rgba(0, 0, 0, .2), 0 1px 1px 0 rgba(0, 0, 0, .14), 0 1px 3px 0 rgba(0, 0, 0, .12);
+}
+
+.card-transparent-medium {
+    background: transparent;
+    height    : $card-height-large;
+    width     : $card-width-medium;
+
+    img {
+        height       : $card-height-large;
+        width        : $card-width-medium;
+        border       : 1px;
+        border-radius: 25px;
+    }
+}
+
+.featured-carousel-card-large {
+    background: $colour-black;
+    height    : $card-height-large;
+    width     : $card-width-medium;
+}
+
+.featured-carousel-card-mediun {
+    background: $colour-black;
+    height    : $card-height-large;
+    width     : $card-width-medium;
+}
+
+.featured-carousel-card-small {
+    background: $colour-black;
+    height    : $card-height-large;
+    width     : $card-width-medium;
+}

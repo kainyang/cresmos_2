@@ -1,0 +1,213 @@
+/***************************************Grid***********************************/
+
+$content-break-max: 1600px;
+$content-break-mid: 1200px;
+$content-break-min: 960px;
+$content-max-width: 1296px;
+$content-min-width: 780px;
+$content-margin-min: 140px;
+$content-margin-max: 202px;
+
+$gutter-column-width: 24px;
+$gutter-row-width: 24px;
+
+$menu-min-height: 426px;
+$persistent-min-height: 402px;
+
+$half-card-1-height: 428px;
+$half-card-2-height: 202px;
+$third-card-height: 300px;
+
+$circle-height-xs: 50px;
+$circle-width-xs: 50px;
+
+$card-height-small: 60px;
+$card-height-medium: 100px;
+$card-height-large: 355px;
+
+$card-width-small: 200px;
+$card-width-medium: 355px;
+
+$max-tooltip-width: 260px;
+
+$content-max-width: 1600px;
+$desktop-min-width: 1201px;
+$tablet-max-width: 1200px;
+$tablet-landscape-min-width: 641px;
+$tablet-portrait-max-width: 640px;
+$tablet-min-width: 481px;
+$mobile-max-width: 480px;
+
+
+/***************************************Colours********************************/
+
+/* primary colours */
+$colour-primary: #03b6c0;
+$colour-navy: #0c2c44;
+$colour-midnight: #041828;
+$colour-wine: #650938;
+$colour-coral: #ffefee;
+
+$colour-background-primary: linear-gradient(0deg, rgba(4,24,40,1) 0%, rgba(12,44,68,1) 100%);
+
+/* secondary colours */
+$colour-rocket: #959595;
+$colour-concrete: #616566;
+$colour-white: #ffffff;
+$colour-black: #000000;
+
+/* state & hover colours */
+$colour-snow: #f7f7f7;
+$colour-cloud: #f3f3f3;
+$colour-ash: #e6e6e6;
+$colour-silver: #99a1ac;
+$colour-pebble: #b7b0a9;
+$colour-stone: #8a8178;
+$colour-gold: #e6cc80;
+$colour-bronze: #c28f63;
+$colour-epic: #a335ee;
+$colour-legendary: #ff8000;
+
+/* alert colours */
+$colour-alert: #faf2e2;
+$colour-error: #ffd3d0;
+$colour-success: #b6e89b;
+$colour-optional: #e7f4ff;
+
+/* symbol & other library colours */
+$colour-icon-alert: #f9ab0d;
+$colour-icon-error: #ff0000;
+$colour-icon-success: #50e22b;
+$colour-active: #43d21c;
+$colour-future-dated: #23a6e6;
+
+
+/**************************************Nav-Area********************************/
+
+$nav-width: 100px;
+
+/************************************Content-Area******************************/
+
+$content-area-top: 90px;
+$content-height-lg: 800px;
+$tablet-content-width: 800px;
+$tablet-content-height: 500px;
+$desktop-content-width: 1000px;
+
+/**************************************Z-Index*********************************/
+
+$zindex-overlay-base: 1000;
+$zindex-back-drop: $zindex-overlay-base - 1;
+$zindex-overlay-close-icon: $zindex-overlay-base + 1;
+$zindex-loading-animation: 2000;
+
+/*************************************Tab-Nav**********************************/
+
+$tab-nav-height: 48px;
+
+/**********************************Tertiary-Nav********************************/
+
+$tertiary-nav-height: 73px;
+
+/***********************************Font Weight********************************/
+
+$font-weight-regular: 400;
+$font-weight-bold: 700;
+
+/************************************Font Size*********************************/
+
+$font-size-super: 88px;
+
+$font-size-xxxxl: 48px;
+$font-size-xxxl: 32px;
+$font-size-xxl: 28px;
+$font-size-xl: 20px;
+$font-size-lg: 18px;
+$font-size-md: 16px;
+$font-size-sm: 14px;
+$font-size-xs: 12px;
+$font-size-xxs: 11px;
+$font-size-xxxs: 10px;
+
+/***********************************Line Height********************************/
+
+$line-height-xxxl: 58px;
+$line-height-xxl: 42px;
+$line-height-xl: 36px;
+$line-height-lg: 26px;
+$line-height-md: 24px;
+$line-height-sm: 20px;
+$line-height-xs: 18px;
+$line-height-xxs: 16px;
+$line-height-xxxs: 14px;
+
+/***********************************Search-Bar*********************************/
+
+$search-bar-height: 30px;
+$search-bar-padding-top: 8px;
+
+/*************************************Forms************************************/
+
+$label-width-md: 250px;
+$input-width-sm: 310px;
+$input-width: 324px;
+$single-column-overlay-width: 508px;
+
+/************************************Buttons***********************************/
+
+$button-height-xs: 20px;
+$button-height-sm: 28px;
+$button-height-md: 38px;
+$button-height-lg: 48px;
+$button-width: 100px;
+$button-with-icon-width: 150px;
+
+/*************************************Margins**********************************/
+
+$margin-xxxs: 1px;
+$margin-xxs: 2px;
+$margin-xs: 4px;
+$margin-sm: 8px;
+$margin-md: 12px;
+$margin-lg: 16px;
+$margin-xl: 20px;
+$margin-xxl: 24px;
+$margin-xxxl: 32px;
+$margin-xxxxl: 48px;
+$margin-xxxxxl: 52px;
+$margin-xxxxxxl: 76px;
+
+/**************************************Padding********************************/
+
+$padding-xxs: 2px;
+$padding-xs: 4px;
+$padding-sm: 8px;
+$padding-md: 12px;
+$padding-lg: 16px;
+$padding-xl: 20px;
+$padding-xxl: 24px;
+$padding-xxxl: 32px;
+$padding-xxxxl: 48px;
+$padding-xxxxxl: 52px;
+$padding-xxxxxxl: 76px;
+
+/**************************************Icons********************************/
+
+$icon-size-xxs: 12px;
+$icon-size-sm: 16px;
+$icon-size-md: 20px;
+$icon-size-layout: 68px;
+
+/*********************************Header***************************************/
+
+$header-menu-height: 80px;
+$header-menu-top-height: 100px;
+$header-menu-mobile-height: 64px;
+
+/*****************************Scroll To Top Arrow*******************************/
+
+$scroll-to-top-arrow-size: 48px;
+
+
+/*****************************Card*******************************/
+$card-width-md: 250px;

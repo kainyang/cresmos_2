@@ -1,0 +1,21 @@
+<div class="full-card">
+    <div class="items-container">
+        <mat-card class="item-card" *ngFor="let item of items">
+            <mat-card-header>
+                <div mat-card-avatar></div>
+                <mat-card-title>{{ item.name }}</mat-card-title>
+            </mat-card-header>
+            <img mat-card-image src="{{ item.image }}">
+            <mat-card-content>
+                <div class="card-row-details">
+                    <span>Quantity: </span>
+                    <span>{{ item.quantity }}</span>
+                </div>
+                <div class="card-row-details">
+                    <span>Rarity: </span>
+                    <span>{{ getRarityText(item.rarity) }}</span>
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>

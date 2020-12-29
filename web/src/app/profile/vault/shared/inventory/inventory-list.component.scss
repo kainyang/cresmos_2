@@ -1,0 +1,40 @@
+@import '../../../../../assets/custom-variables.scss';
+
+.items-container {
+    display: flex;
+
+    .item-card {
+        color     : $colour-white;
+        background: $colour-midnight;
+    }
+}
+
+.bronze-border {
+    border-style: outset !important;
+    border-color: $colour-bronze !important;
+    border-width: 3px !important;
+}
+
+.silver-border {
+    border-style: outset !important;
+    border-color: $colour-silver !important;
+    border-width: 3px !important;
+}
+
+.gold-border {
+    border-style: outset !important;
+    border-color: $colour-gold !important;
+    border-width: 3px !important;
+}
+
+.epic-border {
+    border-style: outset !important;
+    border-color: $colour-epic !important;
+    border-width: 3px !important;
+}
+
+.legendary-border {
+    border-style: outset !important;
+    border-color: $colour-legendary !important;
+    border-width: 3px !important;
+}

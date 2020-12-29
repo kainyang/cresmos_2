@@ -1,0 +1,13 @@
+@import '../../../../assets/custom-variables.scss';
+
+.page-footer {
+    grid-row-start: 2;
+    grid-row-end  : 3;
+    margin-top    : $margin-xxxl;
+
+    background-color: $colour-primary;
+
+    .footer-copyright {
+        background-color: $colour-midnight;
+    }
+}

@@ -1,0 +1,170 @@
+<div *ngIf="isLoaded" class="header">
+    <h2>Event: {{ eventInformation.eventName }}</h2>
+</div>
+<div *ngIf="registrationCompleted" class="message">
+    <span>Event registration successful! You can view your events in the Activity page.</span>
+</div>
+<mat-horizontal-stepper *ngIf="isLoaded && !registrationCompleted" linear #stepper>
+
+    <mat-step [completed]="false">
+            <div class="form-container">
+                <form [formGroup]="memberForm">
+                    <ng-template matStepLabel>Fill out your team name</ng-template>
+                    <div class="field-row">
+                        <div class="field">
+                            <span>Team name: </span>
+                            <input formControlName="teamName" placeholder="Team Name" type="text" class="form-input">
+                        </div>
+                        <app-validation-error [formCtrl]="getMemberFormControl('teamName')"></app-validation-error>
+                    </div>
+                    <ng-container formArrayName="membersUserName">
+                        <div class="field-row" *ngFor="let memberUserName of getMembersUserNameFormArray().controls; index as i">
+                            <ng-container [formGroupName]="i">
+                                <div class="field">
+                                    <span>Member {{ i+1 }} username: </span>
+                                    <input formControlName="userName" placeholder="Member Username" type="text" class="form-input">
+                                </div>
+                                <app-validation-error [formCtrl]="getMembersGroupControl(i, 'userName')"></app-validation-error>
+                            </ng-container>
+                        </div>
+                    </ng-container>
+                </form>
+                <div class="button-container">
+                    <button mat-flat-button class="btn-md" (click)="onFirstNextStep()" disableRipple>
+                        <span class="btn-txt">Submit and next</span>
+                    </button>
+                </div>
+                <app-validation-message [validationMessages]="validationMessages"></app-validation-message>
+            </div>
+    </mat-step>
+
+    <mat-step [completed]="false">
+        <div class="form-container">
+            <form [formGroup]="detailsForm">
+                <ng-template matStepLabel>Fill out members details</ng-template>
+                <mat-accordion multi>
+                    <div class="field-row" *ngFor="let memberDetail of getMembersDetailFormArray().controls; index as i">
+                        <mat-expansion-panel>
+                            <mat-expansion-panel-header>
+                                <mat-panel-title>
+                                    Fill in the details for: {{ memberDetail.controls.userName.value }}
+                                </mat-panel-title>
+                            </mat-expansion-panel-header>
+                            <ng-container formArrayName="membersDetailList">
+                                <ng-container [formGroupName]="i">
+                                    <div class="field">
+                                        <span>Discord name: </span>
+                                        <input formControlName="discordName" type="text" class="form-input">
+                                    </div>
+                                    <app-validation-error [formCtrl]="getMemberDetailsControl(i, 'discordName')"></app-validation-error>
+
+                                    <div class="field">
+                                        <span>Player IGN: </span>
+                                        <input formControlName="playerIGN" type="text" class="form-input">
+                                    </div>
+                                    <app-validation-error [formCtrl]="getMemberDetailsControl(i, 'playerIGN')"></app-validation-error>
+
+                                    <div class="field">
+                                        <span>Game ID: </span>
+                                        <input formControlName="gameID" type="text" class="form-input">
+                                    </div>
+                                    <app-validation-error [formCtrl]="getMemberDetailsControl(i, 'gameID')"></app-validation-error>
+
+                                    <div class="field">
+                                        <span>Date of birth: </span>
+                                        <input formControlName="dateOfBirth" type="date" class="form-input">
+                                    </div>
+                                    <app-validation-error [formCtrl]="getMemberDetailsControl(i, 'dateOfBirth')"></app-validation-error>
+
+                                    <div class="field">
+                                        <span>Postal code: </span>
+                                        <input formControlName="postalCode" type="number" class="form-input">
+                                    </div>
+                                    <app-validation-error [formCtrl]="getMemberDetailsControl(i, 'postalCode')"></app-validation-error>
+
+                                    <div class="field">
+                                        <span>Phone number: </span>
+                                        <input formControlName="phoneNumber" type="number" class="form-input">
+                                    </div>
+                                    <app-validation-error [formCtrl]="getMemberDetailsControl(i, 'phoneNumber')"></app-validation-error>
+                                </ng-container>
+                            </ng-container>
+                        </mat-expansion-panel>
+                    </div>
+                </mat-accordion>
+            </form>
+            <div class="button-container">
+                <button mat-flat-button class="btn-md" (click)="backToFirstStep()" disableRipple>
+                    <span class="btn-txt">Back</span>
+                </button>
+                <button mat-flat-button class="btn-md" (click)="onSecondNextStep()" disableRipple>
+                    <span class="btn-txt">Next</span>
+                </button>
+            </div>
+        </div>
+    </mat-step>
+
+    <mat-step>
+        <ng-template matStepLabel>Review and submit</ng-template>
+        <div *ngIf="teamEvent" class="form-container">
+            <div class="field-row" *ngFor="let memberDetail of teamEvent.membersDetail">
+                <div class="field">
+                    <span>Username: </span>
+                    <span>{{ memberDetail.userName }}</span>
+                </div>
+                <div class="field">
+                    <span>Discord name: </span>
+                    <span>{{ memberDetail.discordName }}</span>
+                </div>
+                <div class="field">
+                    <span>Player IGN: </span>
+                    <span>{{ memberDetail.playerIGN }}</span>
+                </div>
+                <div class="field">
+                    <span>Game ID: </span>
+                    <span>{{ memberDetail.gameID }}</span>
+                </div>
+                <div class="field">
+                    <span>Date of birth: </span>
+                    <span>{{ memberDetail.dateOfBirth | date }}</span>
+                </div>
+                <div class="field">
+                    <span>Postal code: </span>
+                    <span>{{ memberDetail.postalCode }}</span>
+                </div>
+                <div class="field">
+                    <span>Phone number: </span>
+                    <span>{{ memberDetail.phoneNumber }}</span>
+                </div>
+                <mat-divider></mat-divider>
+            </div>
+            <div>
+                <mat-form-field appearance="fill">
+                    <mat-label>Payment mode</mat-label>
+                    <mat-select [(value)]="selectedPaymentMethod">
+                        <mat-option [value]="option.value" *ngFor="let option of paymentMethods">{{ option.viewValue }}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div *ngIf="showPayNowPayment()" class="paynow-container">
+                <div class="description">
+                    <p>Game: Mobile Legends: Bang Bang</p>
+                    <p>Registration Fee: S$5 per Team</p>
+                    <p>Include your Team Name in the UEN/BILL Reference No. Field</p>
+                    <img src="assets/images/events/paynow/scoga_paynow.PNG">
+                </div>
+            </div>
+            <div class="button-container">
+                <button mat-flat-button matStepperPrevious class="btn-md" disableRipple>
+                    <span class="btn-txt">Back</span>
+                </button>
+                <button mat-flat-button *ngIf="!showStripePayment()" class="btn-md" (click)="submit()" disableRipple>
+                    <span class="btn-txt">Submit</span>
+                </button>
+                <app-checkout *ngIf="showStripePayment()" (paymentSucess)="update()" [amount]="eventInformation.amount"
+                    [description]="eventInformation.eventName"></app-checkout>
+            </div>
+        </div>
+    </mat-step>
+</mat-horizontal-stepper>
